@@ -1,0 +1,519 @@
+/*
+=========================================================
+GLOBAL VARIABLES & FONT IMPORTS
+=========================================================
+- Defines a sleek, high-contrast dark theme (inspired by modern IDEs and GitHub).
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Main Background (Deep Charcoal/Black) */
+    --bg-dark: #0d1117;
+    /* Card/Elevated Element Background (Slightly Lighter) */
+    --bg-card: #161b22;
+    /* Primary Accent Color (Technical Blue/Cyan) */
+    --primary-accent: #58a6ff;
+    /* Main Text Color */
+    --text-light: #c9d1d9;
+    /* Secondary Text (Descriptions, Dates) */
+    --text-secondary: #8b949e;
+    /* Border/Divider Color */
+    --border-color: #30363d;
+    
+    /* Animation Timing */
+    --transition-speed: 0.3s;
+}
+
+/*
+=========================================================
+BASE STYLES
+=========================================================
+*/
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* All links styling */
+a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: #88c0ff; /* Lighter shade on hover */
+    text-decoration: underline;
+}
+
+/* Main content container spacing */
+.hero {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 100vh; /* Ensures content fills the viewport height */
+}
+
+/* All major page titles */
+.page-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--primary-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*
+=========================================================
+NAVIGATION BAR STYLES
+=========================================================
+*/
+.navbar {
+    background-color: var(--bg-card);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition-speed);
+}
+
+.navbar ul li a:hover {
+    background-color: var(--border-color);
+    color: var(--text-light);
+}
+
+.navbar ul li a.active {
+    background-color: var(--primary-accent);
+    color: var(--bg-dark); /* Dark text for high contrast on the accent color */
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+}
+
+/*
+=========================================================
+HOME PAGE STYLES
+=========================================================
+*/
+
+.intro-btn {
+    background-color: var(--primary-accent);
+    border: none;
+    color: var(--bg-dark);
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    transition: transform var(--transition-speed);
+}
+
+.intro-btn:hover {
+    background-color: #88c0ff;
+    transform: translateY(-2px);
+}
+
+.name {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.tittle {
+    font-size: 2rem;
+    color: var(--primary-accent);
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.about_contact {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.about_contact i {
+    color: var(--primary-accent);
+    margin-right: 15px;
+    width: 20px;
+}
+
+.profile_img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 50%; /* Changed to round for a softer, modern look */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid var(--primary-accent);
+    box-shadow: 0 0 40px rgba(88, 166, 255, 0.2); /* Subtle glow */
+    transition: transform 0.5s;
+}
+
+.profile_img:hover {
+    transform: scale(1.02);
+}
+
+.social {
+    margin-top: 40px;
+}
+
+.social_link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--primary-accent);
+    font-size: 1.3rem;
+    transition: all var(--transition-speed);
+}
+
+.social_link:hover {
+    background-color: var(--primary-accent);
+    color: var(--bg-dark);
+    transform: rotate(5deg) scale(1.1);
+}
+
+/*
+=========================================================
+ABOUT ME & SERVICE CARD STYLES
+=========================================================
+*/
+
+.about_me_title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    margin-bottom: 20px;
+}
+
+.about_me_text {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.about_page {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+}
+
+.skill_button {
+    background-color: var(--bg-card);
+    border: 1px solid var(--primary-accent);
+    color: var(--primary-accent);
+    padding: 7px 15px;
+    border-radius: 5px;
+    margin: 4px;
+    font-size: 0.9rem;
+    cursor: default;
+    transition: all var(--transition-speed);
+}
+
+.skill_button:hover {
+    background-color: var(--primary-accent);
+    color: var(--bg-dark);
+}
+
+.download-btn {
+    background-color: var(--primary-accent);
+    color: var(--bg-dark);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all var(--transition-speed);
+}
+
+.download-btn:hover {
+    background-color: #88c0ff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(88, 166, 255, 0.3);
+}
+
+/* Service Card (Used on About Me, Education, Experience, Contact) - Highly Polished */
+.service {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-accent); /* Stronger accent line */
+    transition: all var(--transition-speed);
+    height: 100%;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    background-color: #1a222c; /* Slight color shift on hover */
+}
+
+.icon {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.icon-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/*
+=========================================================
+SKILLS & PROGRESS BAR STYLES
+=========================================================
+*/
+.skill-title-progress {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Custom styling for the progress bar (High-tech look) */
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 12px;
+    border: none;
+    background: var(--border-color); /* Empty bar background */
+    border-radius: 6px;
+    margin-bottom: 25px;
+    overflow: hidden; /* Important for clean edges */
+}
+
+/* Filled part of the progress bar */
+progress::-webkit-progress-value {
+    background-color: var(--primary-accent);
+    border-radius: 6px;
+    transition: width 0.8s ease-in-out;
+    box-shadow: 0 0 5px rgba(88, 166, 255, 0.8);
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--primary-accent);
+    border-radius: 6px;
+}
+
+/*
+=========================================================
+INTERESTS, EDUCATION, EXPERIENCE STYLES
+=========================================================
+*/
+
+.interest {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-accent);
+    margin-top: 20px;
+    border-bottom: 1px dotted var(--border-color);
+    padding-bottom: 5px;
+}
+
+.interest-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.company-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.company-title span a {
+    color: var(--primary-accent);
+    font-weight: 600;
+}
+
+.company-time {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin: 10px 0 15px 0;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.service ul {
+    color: var(--text-secondary);
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.service ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/*
+=========================================================
+CONTACT STYLES
+=========================================================
+*/
+
+.round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: var(--primary-accent);
+    color: var(--bg-dark);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+/*
+=========================================================
+FOOTER STYLES
+=========================================================
+*/
+.footer {
+    text-align: center;
+    padding: 25px 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 50px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+
+/*
+=========================================================
+MEDIA QUERIES (Responsiveness)
+=========================================================
+*/
+@media (max-width: 992px) {
+    .name {
+        font-size: 3rem;
+    }
+    .tittle {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar ul li {
+        margin: 5px 0;
+    }
+    .name {
+        font-size: 2.5rem;
+    }
+    .tittle {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+    .profile_img, .about_page {
+        margin-top: 30px;
+        max-width: 300px;
+    }
+    .service {
+        padding: 20px;
+    }
+}
+
+
+/*
+=========================================================
+INTERACTIVITY & ANIMATION STYLES
+=========================================================
+*/
+
+/* Initial state for elements that should animate into view */
+.animate-in {
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below its final position */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Final state: when JavaScript adds the 'visible' class */
+.animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apply staggered animation delay if set inline in HTML/JS */
+.animate-in[style*="animation-delay"] {
+    /* Prevents the delay from breaking responsiveness by only applying transition once */
+    transition-property: opacity, transform;
+}
+
+/* Skill Bar specific styles (ensures smooth transition for progress value) */
+progress.skill-bar::-webkit-progress-value {
+    transition: width 1.5s ease-out; /* Match the JS animation duration */
+}
+progress.skill-bar::-moz-progress-bar {
+    transition: width 1.5s ease-out; /* Match the JS animation duration */
+}
+
+/* Optional: Add a subtle perspective hover to cards for more interaction */
+.service:hover {
+    transform: perspective(1000px) translateY(-5px) rotateX(2deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
