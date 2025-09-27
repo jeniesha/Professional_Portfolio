@@ -203,7 +203,7 @@ const pageContent = {
         <h1 class="page-title animate-in">Education</h1>
         <div class="row">
             <div class="col-md-6"><div class="service animate-in">
-                <h4 class="icon-title">Bachalor of science from <br><a href="https://www.ewubd.edu/">East
+                <h4 class="icon-title">Bachelor of science from <br><a href="https://www.ewubd.edu/">East
                     West University</a></h4>
                 <div>Department of Computer Science and Engineering</div>
                 <div>2016-2020</div>
